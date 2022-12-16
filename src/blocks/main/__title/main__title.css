@@ -1,10 +1,11 @@
 .main__title {
   margin: 0px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 22px;
   text-align: center;
   color: #e77326;
