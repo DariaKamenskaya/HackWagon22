@@ -1,0 +1,16 @@
+.main__input {
+  margin: 0px 0 20px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 17px;
+  width: 500px;
+  height: 30px;
+  background: #FFFFFF;
+  border: 1px solid rgba(165, 165, 165, 0.78);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px 0 0;
+  color: black;
+}

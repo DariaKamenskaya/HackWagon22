@@ -1,0 +1,14 @@
+.main__form {
+  margin: 0px 5%;
+  padding-left: 30px;
+  padding-top: 30px;
+  width: 90%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 4px 18px rgba(0, 0, 0, 0.25);
+  border-radius: 29px;
+  z-index: 2;
+  position: relative;
+}

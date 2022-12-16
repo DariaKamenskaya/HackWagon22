@@ -1,0 +1,12 @@
+.page {
+  min-width: 320px;
+  /* выше установлена минимальная ширина страницы  */
+  max-width: 1440px;
+  /* выше установили ограничение по максимальной ширине  */
+  margin: 0 auto 0;
+  /* выше для экранов отцентрировали весь контент */
+  font-family: Inter, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

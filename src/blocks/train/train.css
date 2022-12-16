@@ -1,0 +1,44 @@
+.train {
+  margin: 0px;
+  flex: 1;
+  width: 100%;
+}
+
+.train__remove {
+  display: none;
+}
+
+
+/* Современные браузеры, кроме Chrome, Opera, Safari */
+@keyframes go-left-right {   /* назовём анимацию: "go-left-right" */
+  from {
+    left: 0px;               /* от: left: 0px */
+    opacity: 1;
+  }
+  to {
+    left: 85%; /* до: left: 100%-50px */
+    opacity: 0;
+  }
+}
+/* Префикс для Chrome, Opera, Safari */
+@-webkit-keyframes go-left-right {
+  from {
+    left: 0px;
+    opacity: 1;
+  }
+  to {
+    left: 85%;
+    opacity: 0;
+  }
+}
+.train__animation {
+  /* применить анимацию go-left-right */
+  /* продолжительность 3s */
+  /* количество раз: бесконечное (infinite) */
+  /* менять направление анимации каждый раз (alternate) */
+  animation: go-left-right 10s 1 alternate forwards;
+  -webkit-animation: go-left-right 10s 1 alternate forwards;
+  position: relative;
+  border: none;
+  background: none;
+}
