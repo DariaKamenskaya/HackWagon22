@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { apiData } from '../utils/Api';
 import decor1 from '../images/decor1.svg';
 import decor2 from '../images/decor2.svg'; 
@@ -67,6 +71,14 @@ function Main(props) {
       return [];
     });
   };
+    
+  // eslint-disable-next-line no-self-compare
+  const [value, setValue] = React.useState(null);
+  // eslint-disable-next-line no-undef, no-self-compare
+  const [ampm, setAmpm] = React.useState(null);
+
+
+
 
   return (
     <main className="main">
@@ -96,7 +108,7 @@ function Main(props) {
               <input required id="end" name="end" type="text" placeholder="Станция назначения" className="main__input"
                    value={values.end} onChange={handleChange}/>
             </label>
-            <label htmlFor="year" className='main__text'>
+            { /*<label htmlFor="year" className='main__text'>
               Введите год отправления
               <input required id="year" name="year" type="number" placeholder="Год отправления" className="main__input"
                    value={values.year} onChange={handleChange}/>
@@ -115,12 +127,30 @@ function Main(props) {
               Введите день отправления
               <input required id="depart_day" name="depart_day" type="number" placeholder="День отправления" className="main__input"
                    value={values.depart_day} onChange={handleChange}/>
-            </label>
+            </label> 
             <label htmlFor="depart_hour" className='main__text'>
               Введите час отправления
               <input required id="depart_hour" name="depart_hour" type="number" placeholder="Час отправления" className="main__input"
                    value={values.depart_hour} onChange={handleChange}/>
             </label>
+            */}
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DateTimePicker
+                label="Дата и время отправления"
+                value={value}
+                onChange={(newValue) => setValue(newValue)}
+                renderInput={(params) => <TextField sx={{
+                  width: '35%',
+                  height: 30,
+                  marginBottom: 6,
+                  '.MuiInputBase-input': { fontSize: 20 }
+                }}
+                inputProps={{style: {fontSize: 24}}} // font size of input text
+                InputLabelProps={{style: {fontSize: 24}}} // font size of input label
+                {...params} />}
+                ampm={ampm}
+            />
+            </LocalizationProvider>
             <label htmlFor="fr_id" className='main__text'>
               Введите номер груза
               <input required id="fr_id" name="fr_id" type="number" placeholder="Номер груза" className="main__input"

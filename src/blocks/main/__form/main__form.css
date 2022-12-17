@@ -1,9 +1,11 @@
 .main__form {
   margin: 0px 5%;
-  padding-left: 30px;
-  padding-top: 30px;
+  padding: 0px;
+  padding-left: 10%;
+  padding-right: 5%;
+  padding-top: 5%;
   width: 90%;
-  height: 84vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.5);

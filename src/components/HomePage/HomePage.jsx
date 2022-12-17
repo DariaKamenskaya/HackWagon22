@@ -3,13 +3,6 @@ import { Button } from '@mui/material';
 
 import "./HomePage.css";
 
-import {
-    BrowserRouter,
-    Route,
-    Link,
-    Router,
-    Routes
-  } from "react-router-dom";
 
 export default class HomePage extends Component {
     render() {

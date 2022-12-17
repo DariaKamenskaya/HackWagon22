@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // импорт модулей
 import { Route, Routes } from 'react-router-dom';
 

@@ -5,8 +5,7 @@ body {
   background: linear-gradient(to bottom right, #862633, #e7feff);
   background-repeat: no-repeat;
   background-position: right;
-  height: 100%;
-  margin: 0px 250px;
+  margin: 0 250px;
 }
 
 code {
@@ -15,7 +14,7 @@ code {
 }
 
 html {
-  height: 100%;
+  height: 100vh;
 }
   
 @import url(./vendor/normalize.css);
