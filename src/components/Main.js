@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiData } from '../utils/Api';
 import decor1 from '../images/decor1.svg';
 import decor2 from '../images/decor2.svg'; 
 
@@ -26,6 +27,10 @@ function Main(props) {
     rsv_dp_id: "",
   });
 
+  let result = 0;
+  const [isRes, handleIsRes] = useState(false);
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues((prevState) => ({
@@ -36,8 +41,31 @@ function Main(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Train!');
+    handleIsRes(true);
     props.handleTrain();
+/*     apiData.postData(values)
+    .then((res) => {
+      console.log('server', res);
+      // Передаем значение в окно поезда
+      result=res.data;
+      handleIsRes(true);
+      props.handleTrain();
+    })
+    .catch((err) => {
+      console.log(err); // "Что-то пошло не так: ..."
+      return [];
+    }); */
+    apiData.getInitial()
+    .then((res) => {
+      console.log('server', res);
+      // Передаем значение в окно поезда
+      handleIsRes(true);
+      props.handleTrain();
+    })
+    .catch((err) => {
+      console.log(err); // "Что-то пошло не так: ..."
+      return [];
+    });
   };
 
   return (
@@ -156,6 +184,7 @@ function Main(props) {
           </div>
           <div className='main__form__button'>
             <button type="submit" className="main__button" >Рассчитать</button>
+            {(isRes) && <p>{result}</p>}
           </div>
         </form>
       </section>

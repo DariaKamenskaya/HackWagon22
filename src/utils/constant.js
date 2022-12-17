@@ -1,0 +1,1 @@
+export const baseUrl = 'http://194.58.123.176:8080/predict';
