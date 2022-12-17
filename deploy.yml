@@ -1,0 +1,31 @@
+---
+- hosts: target
+  gather_facts: no
+  become: yes
+  tasks:
+  - name: Copy to target
+    copy:
+      src: .
+      dest: /opt/hackwagon
+
+  - name: Build new image
+    docker_compose:
+      project_src: /opt/hackwagon
+      state: present
+      build: yes
+    register: output
+
+  - debug:
+      var: output
+
+  - name: Restart
+    docker_compose:
+      project_src: /opt/hackwagon
+      services:
+        - сlient
+      state: present
+      restarted: true
+    register: output
+
+  - debug:
+      var: output

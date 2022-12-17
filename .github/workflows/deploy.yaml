@@ -1,0 +1,25 @@
+name: Run deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: deploy.yml
+          directory: .
+          key: ${{secrets.ANSIBLE_SSH_KEY}}
+          inventory: |
+            [target]
+            194.58.123.176 ansible_user=root
+          options: |
+            -e 'ansible_python_interpreter=/usr/bin/python3'
+            -u root
+            -vvv
