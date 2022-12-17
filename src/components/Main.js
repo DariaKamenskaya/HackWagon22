@@ -12,11 +12,7 @@ function Main(props) {
     is_load: 0,
     start: "",
     end: "",
-    year: "",
-    month: "",
-    week: "",
-    depart_day: "",
-    depart_hour: "",
+    departure_date: '',
     fr_id: "",
     route_type: "",
     rod: "",
@@ -47,6 +43,8 @@ function Main(props) {
     e.preventDefault();
     handleIsRes(true);
     props.handleTrain();
+    values.departure_date = `${value.$y}-${value.$M}-${value.$D}T${value.$H}:${value.$m}:${value.$ms}Z`;
+    console.log(values);
 /*     apiData.postData(values)
     .then((res) => {
       console.log('server', res);
@@ -59,7 +57,7 @@ function Main(props) {
       console.log(err); // "Что-то пошло не так: ..."
       return [];
     }); */
-    apiData.getInitial()
+    apiData.getInitial(values)
     .then((res) => {
       console.log('server', res);
       // Передаем значение в окно поезда

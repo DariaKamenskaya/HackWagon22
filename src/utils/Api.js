@@ -18,11 +18,7 @@ class API {
         is_load: data.is_load,
         start: data.start,
         end: data.end,
-        year: data.year,
-        month: data.month,
-        week: data.week,
-        depart_day: data.depart_day,
-        depart_hour: data.depart_hour,
+        departure_date: data.departure_date,
         fr_id: data.fr_id,
         route_type: data.route_type,
         rod: data.rod,
@@ -47,8 +43,12 @@ class API {
   }
 
   // пробный запрос
-  getInitial() {
-    return fetch(this._url)
+  getInitial(data) {
+    return fetch(this._url, {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
     .then((res) => {
       if (res.ok) {
         return res.json();
