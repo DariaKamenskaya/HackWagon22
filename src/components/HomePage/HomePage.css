@@ -1,0 +1,42 @@
+.wrap {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    padding-top: 270px;
+  }
+  
+  .caption {
+    color: white;
+    animation: show-caption 3s forwards;
+    font-size: 70px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .buttons {
+    float: right;
+    animation: show-buttons 3s forwards;
+  }
+  
+  .Button {
+    color: #ffffffa0;
+  }
+  
+  @keyframes show-caption {
+    from{
+      opacity: 0; 
+    }
+    to{
+      opacity: 1;;
+    }
+  }
+  
+  @keyframes show-buttons {
+    0%{
+      opacity: 0;
+      transform: translateY(100px); 
+    }
+    100% {
+      transform: translateY(0); 
+    }
+  }
