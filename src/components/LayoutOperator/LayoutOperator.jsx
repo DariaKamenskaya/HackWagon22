@@ -30,23 +30,31 @@ const style = {
   p: 4,
 };
 
+const buttonStyle = {
+    borderRadius: 35,
+    backgroundColor: "#862633",
+    padding: "18px 36px",
+    fontSize: "18px",
+    display: "flex"
+}
+
 const columns = [
-  { field: 'is_load', headerName: 'is_load' },
-  { field: 'start', headerName: 'start'},
-  { field: 'end', headerName: 'end'},
-  { field: 'departure_date', headerName: 'departure_date'},
-  { field: 'fr_id', headerName: 'fr_id'},
-  { field: 'route_type', headerName: 'route_type'},
-  { field: 'rod', headerName: 'rod'},
-  { field: 'common_ch', headerName: 'common_ch'},
-  { field: 'vidsobst', headerName: 'vidsobst'},
-  { field: 'distance', headerName: 'distance'},
-  { field: 'snd_org_id', headerName: 'snd_org_id'},
-  { field: 'rsv_org_id', headerName: 'rsv_org_id'},
-  { field: 'snd_roadid', headerName: 'snd_roadid'},
-  { field: 'rsv_roadid', headerName: 'rsv_roadid'},
-  { field: 'snd_dp_id', headerName: 'snd_dp_id'},
-  { field: 'rsv_dp_id', headerName: 'rsv_dp_id'}
+  { field: 'is_load', headerName: 'Признак гружёности' },
+  { field: 'start', headerName: 'Начальная точка маршрута'},
+  { field: 'end', headerName: 'Конечная точка маршрута'},
+  { field: 'departure_date', headerName: 'Дата и время отправления'},
+  { field: 'fr_id', headerName: 'Номер груза'},
+  { field: 'route_type', headerName: 'Тип отправки'},
+  { field: 'rod', headerName: 'Род подвижного состава'},
+  { field: 'common_ch', headerName: 'ID обобщённой характеристики вагона'},
+  { field: 'vidsobst', headerName: 'Вид собственности'},
+  { field: 'distance', headerName: 'Расстояние рейса'},
+  { field: 'snd_org_id', headerName: 'ID грузоотправителя'},
+  { field: 'rsv_org_id', headerName: 'ID грузополучателя'},
+  { field: 'snd_roadid', headerName: 'ID дороги отправления'},
+  { field: 'rsv_roadid', headerName: 'ID дороги назначения'},
+  { field: 'snd_dp_id', headerName: 'ID региона отправления'},
+  { field: 'rsv_dp_id', headerName: 'ID региона назначения'}
 ]
 const columnsArray = [
   'is_load',
@@ -150,7 +158,7 @@ const LayoutOperator = () => {
             sx={{ flex: 2 }}
             onClick={handleOpen}
           >
-            Add
+            Загрузить
           </Button>
         </Grid>
 
